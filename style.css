@@ -485,11 +485,3 @@ input:focus, textarea:focus {
     flex-direction: column;
   }
 }
-
-.social-icon .fa-tree {
-  transition: transform 0.3s ease;
-}
-
-.social-icon:hover .fa-tree {
-  transform: scale(1.1);
-}
