@@ -485,3 +485,282 @@ input:focus, textarea:focus {
     flex-direction: column;
   }
 }
+
+/* ===== DARK MODE STYLES ===== */
+.dark-mode {
+  background: #121826;
+  color: #e5e9f0;
+}
+
+.dark-mode body {
+  background: #121826;
+  color: #e5e9f0;
+}
+
+.dark-mode .navbar {
+  background: rgba(18, 24, 38, 0.9);
+  border-bottom-color: rgba(255,255,255,0.05);
+}
+
+.dark-mode .logo {
+  background: linear-gradient(135deg, #5dbd9e, #7ed4b5);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.dark-mode .nav-links a {
+  color: #cbd5e6;
+}
+
+.dark-mode .nav-links a:hover {
+  color: #5dbd9e;
+}
+
+.dark-mode .hero-badge {
+  background: rgba(93, 189, 158, 0.15);
+  color: #5dbd9e;
+  border-color: rgba(93, 189, 158, 0.2);
+}
+
+.dark-mode .hero h1 {
+  background: linear-gradient(to right, #cbd5e6, #5dbd9e);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.dark-mode .hero p {
+  color: #a0b3cc;
+}
+
+.dark-mode .info-card {
+  background: #1e2638;
+  border-color: #2a3348;
+}
+
+.dark-mode .info-icon {
+  background: #2a3348;
+  color: #5dbd9e;
+}
+
+.dark-mode .skill-item {
+  background: #1e2638;
+  border-color: #2a3348;
+  color: #cbd5e6;
+}
+
+.dark-mode .skill-item:hover {
+  background: #5dbd9e;
+  color: #121826;
+}
+
+.dark-mode .project-card {
+  background: #1e2638;
+  border-color: #2a3348;
+}
+
+.dark-mode .project-card:hover {
+  background: #252f44;
+  box-shadow: 0 30px 40px -18px rgba(93, 189, 158, 0.15);
+}
+
+.dark-mode .contact-flex {
+  background: rgba(30, 38, 56, 0.8);
+  border-color: rgba(255,255,255,0.05);
+}
+
+.dark-mode input, .dark-mode textarea {
+  background: #2a3348;
+  border-color: #3a445c;
+  color: #e5e9f0;
+}
+
+.dark-mode input::placeholder, .dark-mode textarea::placeholder {
+  color: #7a85a0;
+}
+
+.dark-mode footer {
+  background: #0a0e16;
+  color: #7a85a0;
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #2a6b58;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+  border: none;
+  font-size: 1.4rem;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  background: #1d5a48;
+}
+
+.dark-mode .dark-mode-toggle {
+  background: #5dbd9e;
+  color: #121826;
+}
+/* ===== FIXES FOR MISSING DARK MODE ELEMENTS ===== */
+
+/* Navbar - force dark mode background */
+.dark-mode .navbar {
+  background: rgba(18, 24, 38, 0.95) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(93, 189, 158, 0.15);
+}
+
+/* Send a note card (contact form area) */
+.dark-mode .contact-flex > div:last-child > div {
+  background: #1e2638 !important;
+  border: 1px solid #2a3348;
+}
+
+.dark-mode .contact-flex h3 {
+  color: #5dbd9e;
+}
+
+.dark-mode #contactForm input,
+.dark-mode #contactForm textarea {
+  background: #2a3348;
+  border: 1px solid #3a445c;
+  color: #e5e9f0;
+}
+
+.dark-mode #contactForm input:focus,
+.dark-mode #contactForm textarea:focus {
+  border-color: #5dbd9e;
+  outline: none;
+}
+
+.dark-mode #contactForm input::placeholder,
+.dark-mode #contactForm textarea::placeholder {
+  color: #7a85a0;
+}
+
+/* Summer camp helper div (experience section) */
+.dark-mode #experience > div > div {
+  background: #1e2638 !important;
+  border: 1px solid #2a3348;
+}
+
+.dark-mode #experience h3 {
+  color: #5dbd9e !important;
+}
+
+.dark-mode #experience p {
+  color: #a0b3cc !important;
+}
+
+.dark-mode #experience ul,
+.dark-mode #experience li {
+  color: #cbd5e6 !important;
+}
+
+.dark-mode #experience .fa-info-circle {
+  color: #5dbd9e;
+}
+
+/* Also fix any inline styled buttons in experience section */
+.dark-mode .btn-primary {
+  background: #5dbd9e;
+  color: #121826;
+}
+
+.dark-mode .btn-primary:hover {
+  background: #7ed4b5;
+}
+
+/* Fix any white backgrounds that slipped through */
+.dark-mode .info-card,
+.dark-mode .project-card,
+.dark-mode .skill-item,
+.dark-mode .contact-flex {
+  background-color: #1e2638;
+}
+
+.dark-mode .section-projects {
+  background: rgba(93, 189, 158, 0.05);
+}
+
+/* ===== DARK MODE FIXES FOR WHITE ELEMENTS ===== */
+
+/* Fix the white card containing "Send a note" */
+.dark-mode .contact-flex > div:last-child > div {
+  background: #1e2638 !important;
+  border: 1px solid #2a3348;
+}
+
+/* Fix the form inputs (Your name, Email address, Message) */
+.dark-mode #contactForm input,
+.dark-mode #contactForm textarea {
+  background: #2a3348 !important;
+  border: 1px solid #3a445c !important;
+  color: #e5e9f0 !important;
+}
+
+/* Fix placeholder text color */
+.dark-mode #contactForm input::placeholder,
+.dark-mode #contactForm textarea::placeholder {
+  color: #8892b0 !important;
+}
+
+/* Fix the "Send message" button in dark mode */
+.dark-mode #submitBtn {
+  background: #5dbd9e;
+  color: #121826;
+}
+
+.dark-mode #submitBtn:hover {
+  background: #7ed4b5;
+}
+
+/* Fix the Resume Download button */
+.dark-mode .btn-primary[href*="resume.pdf"] {
+  background: #5dbd9e;
+  color: #121826;
+}
+
+.dark-mode .btn-primary[href*="resume.pdf"]:hover {
+  background: #7ed4b5;
+}
+
+/* Fix any white backgrounds in contact section */
+.dark-mode .contact-info,
+.dark-mode .info-item,
+.dark-mode .social-icon {
+  background: transparent !important;
+}
+
+.dark-mode .social-icon {
+  background: #2a3348 !important;
+  color: #5dbd9e;
+}
+
+.dark-mode .social-icon:hover {
+  background: #5dbd9e !important;
+  color: #121826;
+}
+
+/* Resume button dark mode styling */
+.dark-mode a[href*="resume.pdf"] {
+  background: #5dbd9e !important;
+  color: #121826 !important;
+}
+
+.dark-mode a[href*="resume.pdf"]:hover {
+  background: #7ed4b5 !important;
+  transform: translateY(-2px);
+}

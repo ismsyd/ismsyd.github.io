@@ -2,11 +2,11 @@
 document.addEventListener('DOMContentLoaded', function() {
   
   // Skills array
-  const skillsList = [
-    "C / C++", "Python", "Java", "JavaScript", "HTML5/CSS3", 
-    "React.js", "Node.js", "Embedded C", "Arduino", "MATLAB", 
-    "Git/GitHub", "Data Structures", "Algorithms", "SQL"
-  ];
+const skillsList = [
+    "C / C++", "Python", "Java", "Digital Logic Design",
+    "Circuit Analysis", "555 Timer IC", "Flip-Flop Circuits (74LS74, 74LS76)",
+    "4511 BCD-to-7-Segment", "Problem Solving", "Basic Data Structures"
+];
   
   const skillsContainer = document.getElementById("skillsContainer");
   if(skillsContainer) {
@@ -22,19 +22,19 @@ document.addEventListener('DOMContentLoaded', function() {
   // Projects data
   const projectsData = [
     {
-      icon: "fas fa-robot",
-      title: "Smart Irrigation System",
-      desc: "IoT-based embedded system using Arduino & sensors. Automated irrigation with real-time data logging."
+      icon: "fas fa-microchip",
+      title: "555 Timer IC Projects",
+      desc: "Designed and tested timer circuits using the 555 IC, including monostable and astable multivibrator configurations."
     },
     {
-      icon: "fas fa-brain",
-      title: "AI Image Classifier",
-      desc: "Python + TensorFlow CNN model achieving 92% accuracy on custom dataset, deployed via Flask."
+      icon: "fas fa-calculator",
+      title: "Arithmetic Logic Circuits",
+      desc: "Built basic arithmetic operations (addition, subtraction) using logic gates and ICs like 74LS74 and 74LS76."
     },
     {
-      icon: "fas fa-chart-line",
-      title: "Student Dashboard",
-      desc: "Full-stack MERN app for interactive academic analytics and grade visualization."
+      icon: "fas fa-display",
+      title: "BCD-to-7-Segment Display",
+      desc: "Implemented a BCD-to-7-segment decoder circuit using the 4511 IC to display digits 0-9."
     }
   ];
 
@@ -47,12 +47,10 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="project-icon"><i class="${proj.icon}"></i></div>
         <h3>${proj.title}</h3>
         <p style="color:#4a627a;">${proj.desc}</p>
-        <div style="margin-top: 1.2rem;"><span style="background:#eef2fa; padding:0.2rem 0.8rem; border-radius:30px; font-size:0.75rem;">demo →</span></div>
       `;
       projectsGrid.appendChild(card);
     });
   }
-
   // Contact Form Handler - Using EmailJS or direct mailto fallback
   const contactForm = document.getElementById("contactForm");
   const formFeedback = document.getElementById("formFeedback");
@@ -188,5 +186,27 @@ document.addEventListener('DOMContentLoaded', function() {
       navbar.style.boxShadow = "none";
     }
   });
+  // Dark mode toggle functionality
+  const darkModeToggle = document.getElementById('darkModeToggle');
   
+  if (darkModeToggle) {
+    // Check for saved preference
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+      darkModeToggle.innerHTML = '☀️';
+    }
+    
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        darkModeToggle.innerHTML = '☀️';
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        darkModeToggle.innerHTML = '🌙';
+      }
+    });
+  }
 });
+
