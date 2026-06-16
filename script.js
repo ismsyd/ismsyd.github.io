@@ -20,24 +20,20 @@ const skillsList = [
   }
 
   // Projects data
-  const projectsData = [
+const projectsData = [
     {
-      icon: "fas fa-microchip",
       title: "555 Timer IC Projects",
       desc: "Designed and tested timer circuits using the 555 IC, including monostable and astable multivibrator configurations."
     },
     {
-      icon: "fas fa-calculator",
-      title: "Arithmetic Logic Circuits",
-      desc: "Built basic arithmetic operations (addition, subtraction) using logic gates and ICs like 74LS74 and 74LS76."
+      title: "Small Boolean Circuits",
+      desc: "Designed and implemented basic boolean logic circuits using AND, OR, NOT, NAND, NOR, XOR, and XNOR gates with ICs like 74LS00, 74LS02, and 74LS86."
     },
     {
-      icon: "fas fa-display",
       title: "BCD-to-7-Segment Display",
       desc: "Implemented a BCD-to-7-segment decoder circuit using the 4511 IC to display digits 0-9."
     }
   ];
-
   const projectsGrid = document.getElementById("projectsGrid");
   if(projectsGrid) {
     projectsData.forEach(proj => {
