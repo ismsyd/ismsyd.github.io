@@ -85,13 +85,17 @@ const projectsData = [
         if (typeof emailjs !== 'undefined') {
           // EmailJS is loaded - use it
           await emailjs.send(
-            'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-            'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+            'service_2pjmfsh', // Replace with your EmailJS service ID
+            'template_1zi5ej4', // Replace with your EmailJS template ID
             {
-              from_name: userName,
-              from_email: userEmail,
-              message: userMessage,
-              to_email: 'sayedissam3@gmail.com'
+              name: userName,           // Matches {{name}} in template
+              email: userEmail,         // Matches {{email}} in template
+              time: new Date().toLocaleString('en-US', {
+                dateStyle: 'medium',
+                timeStyle: 'short'
+              }),                       // Matches {{time}} in template
+              message: userMessage,     // Matches {{message}} in template
+              message_id: Math.floor(Math.random() * 10000) // Optional: {{message_id}}
             }
           );
           showFeedback("✓ Message sent successfully! I'll get back to you soon.", "success");
